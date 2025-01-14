@@ -3,7 +3,7 @@
 
 int main()
 {
-    // Region paralela, ie: PARALEL REGIONS
+    // 1. Region paralela, ie: PARALEL REGIONS
     printf("Paralell regions:\n");
 
 #pragma omp parallel num_threads(3)
@@ -14,7 +14,7 @@ int main()
     }
 
 
-    /* Repartición de trabajo en bucles, ie: LOOP WORK SHARING
+    /* 2. Repartición de trabajo en bucles, ie: LOOP WORK SHARING
      * Cada hilo se encarga de una iteración del bucle hasta que se acaben las iteraciones.
      * La directiva "#pragma omp for" NO puede estar fuera de una región paralela. De ley debe estar dentro de una
      * región paralela "#pragma omp parallel".
@@ -33,7 +33,7 @@ int main()
     }
 
 
-    /* Regiones paralelas y trabajo compartido, ie: PARALLEL REGIONS AND WORK SHARING
+    /* 3. Regiones paralelas y trabajo compartido, ie: PARALLEL REGIONS AND WORK SHARING
      * Como lo único que se ejecuta dentro de la región paralela es un bucle for, puedo usar la directiva "#pragma omp
      * parallel for" para ejecutar el bucle y la región paralela al mismo tiempo. No debo usar llaves "{}" para
      * delimitar el bucle for.
@@ -46,7 +46,7 @@ int main()
         printf("Hilo %d: Iteracion %d\n", omp_get_thread_num(), i);
     }
 
-    /* Dentro de PARALLEL REGIONS AND WORK SHARING, puedo usar la directiva "reduction" para realizar operaciones
+    /* 3.1 Dentro de PARALLEL REGIONS AND WORK SHARING, puedo usar la directiva "reduction" para realizar operaciones
      * de reducción, como sumas, multiplicaciones, etc. La directiva "reduction" se usa para que cada hilo tenga su
      * propia copia de la variable y al final se realice la operación de reducción.
      * Es necesario usar la directiva "reduction" para evitar condiciones de carrera, que son errores que se dan

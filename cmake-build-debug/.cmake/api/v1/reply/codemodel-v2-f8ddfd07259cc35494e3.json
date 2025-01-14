@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.30"
+						"string" : "3.24"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "repasoPunteros::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-repasoPunteros-Debug-9362a5bf30157a119d9c.json",
+					"jsonFile" : "target-repasoPunteros-Debug-60356453ee14209cf274.json",
 					"name" : "repasoPunteros",
 					"projectIndex" : 0
 				}
